@@ -16,6 +16,7 @@ jobs:
       with:
         role-to-assume: arn:aws:iam::001575836389:role/github_actions_role
         role-duration-seconds: 900
+        aws-region: us-east-2
 
     # Test locally with cypress then upload to s3 then test again
     - name: Upload static files
