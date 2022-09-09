@@ -14,11 +14,12 @@ jobs:
     - name: configure aws credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
+        role-skip-session-tagging: true
         role-to-assume: arn:aws:iam::001575836389:role/github_actions_role
         role-duration-seconds: 900
         aws-region: us-east-2
 
-    # # Test locally with cypress then upload to s3 then test again
+    # Test locally with cypress then upload to s3 then test again
     # - name: Upload static files
     #   uses: jakejarvis/s3-sync-action@master
     #   with:
@@ -29,3 +30,4 @@ jobs:
     #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     #     AWS_REGION: 'us-east-2'
     #     SOURCE_DIR: 'public'
+    # s
