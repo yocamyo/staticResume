@@ -21,4 +21,4 @@ jobs:
     # Test locally with cypress then upload to s3 then test again
     - name:  sync files to s3
       run: |
-          aws s3 sync . s3://camdenresume --exclude '.git*'
+          aws s3 sync . s3://camdenresume --exclude '.git*' --exclude 'readme.md'
