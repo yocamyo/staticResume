@@ -19,6 +19,6 @@ jobs:
         aws-region: us-east-2
 
     # Test locally with cypress then upload to s3 then test again
-    - name:  Copy files to s3
+    - name:  sync files to s3
       run: |
-          aws s3 cp . s3://camdenresume/
+          aws s3 sync . s3://camdenresume
