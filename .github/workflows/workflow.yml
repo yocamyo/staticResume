@@ -18,7 +18,13 @@ jobs:
         role-duration-seconds: 900
         aws-region: us-east-2
 
-    # Test locally with cypress then upload to s3 then test again
     - name:  sync files to s3
       run: |
-          aws s3 sync . s3://camdenresume --exclude '.git*' --exclude 'readme.md'
+          aws s3 sync . s3://camdenresume --exclude '.git*' --exclude 'readme.md' --exclude 'cypress*' --exclude 'node_modules' --exclude 'package.json' --exclude 'yarn.lock'
+
+    - name: Invalidate CloudFront
+      uses: chetan/invalidate-cloudfront-action@v2
+      env:
+        DEBUG: "1"
+        PATHS: /index.html
+        DISTRIBUTION: 'E1PQCQUM4L967T'
