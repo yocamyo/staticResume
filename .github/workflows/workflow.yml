@@ -20,7 +20,7 @@ jobs:
 
     - name:  sync files to s3
       run: |
-          aws s3 sync . s3://camdenresume --exclude '.git*' --exclude 'readme.md' --exclude 'cypress*' --exclude 'node_modules' --exclude 'package.json' --exclude 'yarn.lock'
+          aws s3 sync . s3://camdenresume --exclude '.git*' --exclude 'readme.md' --exclude 'cypress*' --exclude 'node_modules*' --exclude 'package.json' --exclude 'yarn.lock'
 
     - name: Invalidate CloudFront
       uses: chetan/invalidate-cloudfront-action@v2

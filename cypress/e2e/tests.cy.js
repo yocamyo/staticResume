@@ -13,7 +13,7 @@ describe('my resume site', () => {
     cy.contains('LinkedIn Profile').should('have.attr', 'href', 'https://www.linkedin.com/in/naviscam/')
   })
 
-  it('goes to linkedin', () => {
-    cy.contains('LinkedIn Profile').should('have.attr', 'href', 'https://www.linkedin.com/in/naviscam/')
+  it('downloads pdf', () => {
+    cy.contains('Download My Resume').should('have.attr', 'href', 'https://www.linkedin.com/in/naviscam/')
   })
 })
