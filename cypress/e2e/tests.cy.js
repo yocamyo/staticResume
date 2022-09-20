@@ -14,6 +14,8 @@ describe('my resume site', () => {
   })
 
   it('downloads pdf', () => {
-    cy.contains('Download My Resume').should('have.attr', 'href', 'https://www.linkedin.com/in/naviscam/')
+    cy.contains('Download My Resume').should('have.attr', 'href', 'static/resume.pdf').click()
+    cy.verifyDownload('download.pdf');
   })
+
 })

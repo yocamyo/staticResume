@@ -23,9 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+require('cypress-downloadfile/lib/downloadFileCommand');
+require('cy-verify-downloads').addCustomCommand();
 
 import './commands'
 Cypress.on('uncaught:exception', (err, runnable) => {
   // returning false here prevents Cypress from failing the test
   return false
 })
+
