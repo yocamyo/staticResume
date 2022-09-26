@@ -17,5 +17,4 @@ describe('my resume site', () => {
     cy.contains('Download My Resume').should('have.attr', 'href', 'static/resume.pdf').click()
     cy.verifyDownload('download.pdf');
   })
-
 })
