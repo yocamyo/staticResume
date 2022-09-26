@@ -28,3 +28,6 @@ jobs:
         DEBUG: "1"
         PATHS: /index.html
         DISTRIBUTION: 'E1PQCQUM4L967T'
+
+    - name: Cypress run
+      uses: cypress-io/github-action@v4
